@@ -88,7 +88,12 @@ public class Student
     public void setTelephone(String telephone)
     {
         //Telephone number should match the North American dialing plan (NXX NXX-XXXX, where N denotes 2–9, and X is any digit 0–9).
-        this.telephone = telephone;
+        if(telephone.matches("\\(?[2-9]\\d{2}\\)?[-\\s]?[2-9]\\d{2}[-\\s]?\\d{4}")) {
+            this.telephone = telephone;
+        }
+        else {
+            throw new IllegalArgumentException("Invalid phone, Please enter valid 10 digit number");
+        }
     }
 
     public String getProvince() {
