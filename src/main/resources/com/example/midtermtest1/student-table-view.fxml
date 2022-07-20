@@ -6,21 +6,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.midtermtest1.StudentTableViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.midtermtest1.StudentTableViewController">
     <children>
         <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label text="Label">
+                <Label alignment="TOP_CENTER" text="Students">
                     <VBox.margin>
-                        <Insets bottom="20.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </VBox.margin>
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
                 </Label>
-                <TableView prefHeight="317.0" prefWidth="600.0">
+                <TableView fx:id="StudentTableView" prefHeight="317.0" prefWidth="600.0">
                     <columns>
                         <TableColumn fx:id="studentNumColumn" prefWidth="75.0" text="Student#" />
                         <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="First Name" />
@@ -40,18 +46,13 @@
                 </TableView>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Label prefHeight="18.0" prefWidth="114.0" text="Number of Students:">
+                        <Label fx:id="makeLabelForNoOfStudents" prefHeight="38.0" prefWidth="189.0" text="Number of Students:">
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets bottom="10.0" left="10.0" right="100.0" top="10.0" />
                             </HBox.margin>
                         </Label>
-                  <TextArea prefHeight="52.0" prefWidth="138.0">
-                     <HBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
-                     </HBox.margin>
-                  </TextArea>
-                  <ComboBox prefWidth="150.0" promptText="Select Province" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="117.0" text="Load All Students">
+                  <ComboBox fx:id="makeComboBox" prefWidth="150.0" promptText="Select Province" />
+                        <Button fx:id="makeButtonToLoadAllStudents" mnemonicParsing="false" prefHeight="26.0" prefWidth="117.0" text="Load All Students">
                             <HBox.margin>
                                 <Insets left="20.0" right="10.0" />
                             </HBox.margin>

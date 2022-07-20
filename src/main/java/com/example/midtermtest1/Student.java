@@ -1,9 +1,7 @@
 package com.example.midtermtest1;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class Student
 {
@@ -35,7 +33,7 @@ public class Student
         }
         else
         {
-            throw new IllegalArgumentException("The student number should be in the range 200034000 to 200070000");
+            System.out.println("student " + studentNum + " rejected because: 'studentNum must be in the range of 200034000 && 200070000'");
         }
 
     }
@@ -52,7 +50,7 @@ public class Student
         {
             this.firstName = firstName;
         } else {
-            throw new IllegalArgumentException("invalid first name, must be 1 or more character");
+            System.out.println("student " + studentNum + " rejected because: 'invalid first name, must be 1 or more character");
         }
     }
 
@@ -69,7 +67,7 @@ public class Student
         {
             this.lastName = lastName;
         } else {
-            throw new IllegalArgumentException("invalid last name, must be 1 or more character");
+            System.out.println("student " + studentNum + " rejected because: 'invalid last name, must be 1 or more character");
         }
     }
 
@@ -77,8 +75,15 @@ public class Student
         return gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+      public void setGender(String gender) {
+//        if(gender.trim() == "male" || gender.trim() == "female")
+//        {
+            this.gender = gender;
+//        }
+//        else
+//        {
+//            System.out.println("student " + studentNum + " rejected because: 'gender must be male, female or other'");
+//        }
     }
 
     public String getTelephone() {
@@ -92,7 +97,7 @@ public class Student
             this.telephone = telephone;
         }
         else {
-            throw new IllegalArgumentException("Invalid phone, Please enter valid 10 digit number");
+            System.out.println("student " + studentNum + " rejected because: '" + studentNum + " needs to match the North American Dialling Plan'");
         }
     }
 
@@ -109,7 +114,7 @@ public class Student
         }
         else
         {
-            throw new IllegalArgumentException(province + " is not valid, coose from " + provinceName);
+            System.out.println("student " + studentNum + " rejected because: '" + province + " must be in the list of " + provinceName + "'");
         }
 
     }
@@ -127,7 +132,7 @@ public class Student
         }
         else
         {
-            throw new IllegalArgumentException("Major Code must be 4 upper case letters only");
+            System.out.println("student " + studentNum + " rejected because: 'The major code requires 4 upper case letters'");
         }
 
     }
@@ -142,7 +147,7 @@ public class Student
             this.avgGrade = avgGrade;
         } else
         {
-            throw new IllegalArgumentException("Average grade must be in the range of 0-100");
+            System.out.println("student " + studentNum + " rejected because: 'Average grade must be in the range 0-100'");
         }
     }
 }
